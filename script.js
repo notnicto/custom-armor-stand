@@ -99,14 +99,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
-    removeBtn.textContent = "Remove";
+    removeBtn.textContent = "Remove skin";
     removeBtn.className = "remove-btn";
 
     const blocks = container.querySelectorAll(".texture-block");
     const index = blocks.length + 1;
 
     const title = document.createElement("h4");
-    title.textContent = `Texture #${index}`;
+    title.textContent = `Skin #${index}`;
     block.appendChild(title);
 
     block.appendChild(removeBtn);
@@ -114,7 +114,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const modeLabel = document.createElement("div");
     modeLabel.className = "label";
-    modeLabel.textContent = "Mode";
+    modeLabel.textContent = "Armor stand type";
 
     const modeSelect = document.createElement("select");
     modeSelect.innerHTML = `
@@ -128,18 +128,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const nameLabel = document.createElement("div");
     nameLabel.className = "label";
-    nameLabel.textContent = "Texture Name";
+    nameLabel.textContent = "Armor stand name";
 
     const nameInput = document.createElement("input");
     nameInput.type = "text";
-    nameInput.placeholder = "texture name";
+    nameInput.placeholder = "input name";
 
     block.appendChild(nameLabel);
     block.appendChild(nameInput);
 
     const fileLabel = document.createElement("div");
     fileLabel.className = "label";
-    fileLabel.textContent = "Base Texture";
+    fileLabel.textContent = "Skin";
 
     const fileWrapper1 = document.createElement("div");
     fileWrapper1.className = "file-wrapper";
@@ -150,7 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const fileBtn1 = document.createElement("div");
     fileBtn1.className = "file-button";
-    fileBtn1.textContent = "Upload Base Texture";
+    fileBtn1.textContent = "Upload Skin";
 
     file1.addEventListener("change", () => {
       if (file1.files[0]) {
@@ -169,7 +169,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const glowLabel = document.createElement("div");
     glowLabel.className = "label";
-    glowLabel.textContent = "Glowing Texture";
+    glowLabel.textContent = "Glowing skin part";
 
     const fileWrapper2 = document.createElement("div");
     fileWrapper2.className = "file-wrapper";
@@ -187,12 +187,17 @@ window.addEventListener("DOMContentLoaded", () => {
         fileBtn2.textContent = file2.files[0].name;
       }
     });
+    const glowLabelwarning = document.createElement("div");
+    glowLabelwarning.className = "label2";
+    glowLabelwarning.textContent =
+      "While choosing glowing armor stand skin, divide the skin into two part - skin without glowing part and skin with only glowing part!";
 
     fileWrapper2.appendChild(fileBtn2);
     fileWrapper2.appendChild(file2);
 
     glowWrapper.appendChild(glowLabel);
     glowWrapper.appendChild(fileWrapper2);
+    glowWrapper.appendChild(glowLabelwarning);
 
     block.appendChild(glowWrapper);
     modeSelect.addEventListener("change", () => {
