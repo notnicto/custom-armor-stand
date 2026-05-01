@@ -16,7 +16,7 @@ function checkImage(file) {
     const url = URL.createObjectURL(file);
 
     img.onload = () => {
-      URL.revokeObjectURL(url); // 🔥 FIX
+      URL.revokeObjectURL(url);
       if (img.width === 64 && img.height === 64) resolve();
       else reject("Image must be 64x64");
     };
@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("textureContainer");
   container.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-btn")) {
-      const block = e.target.closest(".texture-block"); // ✅ FIX
+      const block = e.target.closest(".texture-block");
 
       const blocks = container.querySelectorAll(".texture-block");
       if (blocks.length === 1) return;
