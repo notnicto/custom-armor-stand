@@ -1,3 +1,479 @@
+<<<<<<< HEAD
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Enchant";
+  src: url("enchant.ttf");
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px;
+
+  overflow-x: hidden;
+  position: relative;
+
+  font-family: Inter, sans-serif;
+  color: white;
+
+  background: radial-gradient(
+      circle at top left,
+      rgba(0, 255, 255, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(140, 0, 255, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #050816, #0b1023, #120b2e, #07121f);
+
+  background-size: 400% 400%;
+
+  animation: gradientFlow 14s ease infinite;
+}
+
+/* =========================
+   BACKGROUND MAGIC
+========================= */
+
+#magic-bg {
+  position: fixed;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.magic-particle {
+  position: absolute;
+
+  font-family: "Enchant", sans-serif;
+
+  color: rgba(170, 240, 255, 0.95);
+
+  font-size: 26px;
+
+  font-weight: bold;
+
+  mix-blend-mode: screen;
+
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.9), 0 0 12px rgba(0, 255, 255, 1),
+    0 0 22px rgba(0, 255, 255, 0.95), 0 0 42px rgba(0, 140, 255, 0.85),
+    0 0 80px rgba(140, 0, 255, 0.65);
+
+  animation: floatRune linear forwards;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+@keyframes floatRune {
+  from {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh) translateX(80px) rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 470px;
+
+  padding: 34px;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  background: rgba(7, 12, 25, 0.34);
+
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.container::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 35%
+  );
+
+  pointer-events: none;
+}
+
+.container::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+      circle at top left,
+      rgba(0, 255, 255, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(140, 0, 255, 0.08),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+
+  text-align: center;
+
+  letter-spacing: -0.5px;
+
+  text-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
+}
+
+h3 {
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-weight: 500;
+
+  margin: 20px 0 14px;
+
+  text-align: center;
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.label,
+.label2 {
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  margin-top: 4px;
+  margin-bottom: 6px;
+
+  line-height: 1.4;
+}
+
+/* =========================
+   PACK BLOCK
+========================= */
+
+.pack-box {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   GLASS COMPONENTS
+========================= */
+
+input,
+select,
+.file-button,
+button,
+.texture-block {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 20px rgba(0, 0, 0, 0.18);
+
+  transition: 0.28s ease;
+}
+
+input::before,
+select::before,
+.file-button::before,
+button::before,
+.texture-block::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1),
+    transparent 30%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select {
+  width: 100%;
+  height: 58px;
+
+  padding: 0 18px;
+
+  border-radius: 20px;
+
+  color: white;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus,
+select:focus {
+  border-color: rgba(0, 255, 255, 0.35);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.1), 0 0 24px rgba(0, 255, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   TEXTURE BLOCKS
+========================= */
+
+.texture-block {
+  padding: 22px;
+
+  border-radius: 28px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.file-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 56px;
+}
+
+.file-wrapper input[type="file"] {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.file-button {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 15px;
+}
+
+.file-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(0, 255, 255, 0.18);
+
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  border-radius: 22px;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+
+  margin-top: 18px;
+}
+
+#addTextureBtn,
+.generate-btn {
+  flex: 1;
+
+  height: 62px;
+}
+
+#addTextureBtn:hover,
+.generate-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(0, 255, 255, 0.22);
+
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   REMOVE BUTTON
+========================= */
+
+.remove-btn {
+  height: 42px;
+  width: 140px;
+
+  align-self: flex-end;
+
+  border-radius: 14px;
+
+  color: #ff8b8b;
+
+  font-size: 14px;
+}
+
+.remove-btn:hover {
+  border-color: rgba(255, 100, 100, 0.25);
+
+  box-shadow: 0 0 20px rgba(255, 100, 100, 0.1);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 20px;
+
+    border-radius: 26px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  input,
+  select,
+  .file-button {
+    height: 52px;
+  }
+
+  button {
+    height: 54px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   GRADIENT ANIMATION
+========================= */
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+=======
 body::before {
   content: "";
   position: fixed;
@@ -196,3 +672,4 @@ button:hover {
     gap: 6px;
   }
 }
+>>>>>>> 3acb90b22e9dd3b7a0ca792072c9e7ab079a8306
