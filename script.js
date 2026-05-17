@@ -547,57 +547,39 @@ async function generate() {
 
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-const magicBg = document.getElementById("magic-bg");
+const glyphs = ["ᔑ", "ᓵ", "⍑", "ᒷ", "╎", "リ", "⚍", "ᓭ", "ℸ", "ᒲ"];
 
-const glyphs = [
-  "ᔑ",
-  "ᓵ",
-  "⍑",
-  "ᒷ",
-  "╎",
-  "リ",
-  "⚍",
-  "ᓭ",
-  "ᔑ",
-  "ℸ",
-  "ᒲ",
-  "¡",
-  "॥",
-  "⍊",
-];
+function createStaticParticles() {
+  const layer = document.createElement("div");
 
-function createRune() {
-  const rune = document.createElement("div");
+  layer.className = "particle-layer";
 
-  rune.className = "magic-particle";
+  const isMobile = window.innerWidth < 600;
+  const isTablet = window.innerWidth < 1024;
 
-  rune.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+  const particleCount = isMobile ? 18 : isTablet ? 36 : 80;
 
-  rune.style.left = Math.random() * window.innerWidth + "px";
+  for (let i = 0; i < particleCount; i++) {
+    const p = document.createElement("div");
 
-  rune.style.top = window.innerHeight + 100 + "px";
+    p.className = "static-particle";
 
-  rune.style.fontSize = Math.random() * 18 + 14 + "px";
+    p.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
 
-  rune.style.animationDuration = Math.random() * 10 + 12 + "s";
+    p.style.left = Math.random() * 100 + "%";
 
-  rune.style.opacity = Math.random() * 0.4 + 0.6;
+    p.style.top = Math.random() * 100 + "%";
 
-  rune.style.zIndex = "1";
+    p.style.opacity = Math.random() * 0.45 + 0.2;
 
-  rune.style.filter = `blur(${Math.random() * 1.5}px)`;
+    p.style.fontSize = Math.random() * 10 + 14 + "px";
 
-  magicBg.appendChild(rune);
+    p.style.transform = `rotate(${Math.random() * 360}deg)`;
 
-  setTimeout(() => {
-    rune.remove();
-  }, 22000);
-  const hue = Math.random() > 0.5 ? "cyan" : "violet";
+    layer.appendChild(p);
+  }
 
-  rune.style.filter =
-    hue === "cyan"
-      ? "drop-shadow(0 0 18px cyan)"
-      : "drop-shadow(0 0 18px violet)";
+  document.body.appendChild(layer);
 }
 
-setInterval(createRune, 260);
+createStaticParticles();
