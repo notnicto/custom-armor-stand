@@ -168,7 +168,7 @@ window.addEventListener("DOMContentLoaded", () => {
     glowWrapper.style.display = "none";
 
     const glowLabel = document.createElement("div");
-    glowLabel.className = "label";
+    glowLabel.className = "label3";
     glowLabel.textContent = "Glowing skin part";
 
     const fileWrapper2 = document.createElement("div");
@@ -217,7 +217,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     blocks.forEach((blk, i) => {
       const title = blk.querySelector("h4");
-      if (title) title.textContent = `Texture #${i + 1}`;
+      if (title) title.textContent = `Skin ${i + 1}`;
 
       const removeBtn = blk.querySelector(".remove-btn");
 
@@ -547,7 +547,38 @@ async function generate() {
 
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-const glyphs = ["ᔑ", "ᓵ", "⍑", "ᒷ", "╎", "リ", "⚍", "ᓭ", "ℸ", "ᒲ"];
+const glyphs = [
+  "ᔑ",
+  "ʖ",
+  "ᓵ",
+  "↸",
+  "ᒷ",
+  "⎓",
+  "⊣",
+  "⍑",
+  "╎",
+  "⋮",
+  "ꖌ",
+  "ꖎ",
+  "ᒲ",
+  "リ",
+  "𝙹",
+  "!",
+  "¡",
+  "ᑑ",
+  "∷",
+  "ᓭ",
+  "ℸ",
+  "̣",
+  "⚍",
+  "⍊",
+  "∴",
+  "̇",
+  "/",
+  "|",
+  "|",
+  "⨅",
+];
 
 function createStaticParticles() {
   const layer = document.createElement("div");

@@ -11,20 +11,25 @@
 
 body {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 32px;
-
   overflow-x: hidden;
   position: relative;
-
   font-family: Inter, sans-serif;
   color: white;
-
-  background: radial-gradient(circle at top, #11192f, #0b1020 60%);
+  background: radial-gradient(
+      circle at top,
+      rgba(0, 140, 255, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(140, 0, 255, 0.1),
+      transparent 35%
+    ),
+    #070b17;
 }
 
 /* =========================
@@ -34,48 +39,39 @@ body {
 .container {
   position: relative;
   z-index: 2;
-
   width: 100%;
   max-width: 470px;
-
   padding: 34px;
-
-  border-radius: 32px;
-
+  border-radius: 34px;
   overflow: hidden;
-
-  background: rgba(7, 12, 25, 0.22);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
+  background: linear-gradient(
+    145deg,
+    rgba(15, 20, 40, 0.72),
+    rgba(8, 12, 28, 0.82)
+  );
   border: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 140, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .container::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0.08),
     transparent 35%
   );
-
   pointer-events: none;
 }
 
 .container::after {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background: radial-gradient(
       circle at top left,
       rgba(0, 255, 255, 0.08),
@@ -86,7 +82,6 @@ body {
       rgba(140, 0, 255, 0.08),
       transparent 40%
     );
-
   pointer-events: none;
 }
 
@@ -97,45 +92,39 @@ body {
 h1 {
   font-size: 30px;
   font-weight: 700;
-
   margin-bottom: 18px;
-
   text-align: center;
-
   letter-spacing: -0.5px;
-
   text-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
 }
 
 h3 {
   font-size: 14px;
-
   color: rgba(255, 255, 255, 0.65);
-
   font-weight: 500;
-
   margin: 20px 0 14px;
-
   text-align: center;
 }
 
 h4 {
   font-size: 15px;
   font-weight: 600;
-
   margin-bottom: 8px;
 }
 
 .label,
-.label2 {
+.label2,
+.label3 {
   font-size: 13px;
-
   color: rgba(255, 255, 255, 0.65);
-
-  margin-top: 4px;
-  margin-bottom: 6px;
-
   line-height: 1.4;
+}
+
+.label2 {
+  margin-top: 10px;
+}
+.label3 {
+  margin-bottom: 10px;
 }
 
 /* =========================
@@ -161,7 +150,11 @@ button,
 
   border: 1px solid rgba(255, 255, 255, 0.08);
 
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -217,14 +210,12 @@ input::placeholder {
 
 input:focus,
 select:focus {
-  border-color: rgba(0, 255, 255, 0.35);
+  border-color: rgba(0, 255, 255, 0.5);
+
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.12),
+    0 0 24px rgba(0, 255, 255, 0.18), 0 0 50px rgba(0, 140, 255, 0.12);
 
   background: rgba(255, 255, 255, 0.08);
-
-  transform: translateY(-1px);
-
-  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.1), 0 0 24px rgba(0, 255, 255, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 select {
   appearance: none;
@@ -263,15 +254,26 @@ select option:checked {
 ========================= */
 
 .texture-block {
-  padding: 22px;
+  padding: 24px;
 
-  border-radius: 28px;
+  border-radius: 30px;
 
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.015)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 .texture-block select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
@@ -288,7 +290,6 @@ select option:checked {
 
 .file-wrapper {
   position: relative;
-
   width: 100%;
   height: 56px;
 }
@@ -296,34 +297,28 @@ select option:checked {
 .file-wrapper input[type="file"] {
   position: absolute;
   inset: 0;
-
   opacity: 0;
-
   cursor: pointer;
 }
-
+.file-wrapper:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 255, 255, 0.18);
+}
 .file-button {
   width: 100%;
   height: 58px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 20px;
-
   color: rgba(255, 255, 255, 0.92);
-
   font-size: 15px;
 }
 
 .file-button:hover {
   transform: translateY(-2px);
-
   background: rgba(255, 255, 255, 0.08);
-
   border-color: rgba(0, 255, 255, 0.18);
-
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
@@ -334,34 +329,27 @@ select option:checked {
 
 button {
   border-radius: 22px;
-
   color: white;
-
   cursor: pointer;
-
   font-weight: 600;
 }
 
 .actions {
   display: flex;
   gap: 16px;
-
   margin-top: 18px;
 }
 
 #addTextureBtn,
 .generate-btn {
-  flex: 1;
-
+  flex: auto;
   height: 62px;
 }
 
 #addTextureBtn:hover,
 .generate-btn:hover {
   transform: translateY(-2px);
-
   border-color: rgba(0, 255, 255, 0.22);
-
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
@@ -373,22 +361,18 @@ button {
 .remove-btn {
   height: 42px;
   width: 140px;
-
   align-self: flex-end;
-
   border-radius: 14px;
-
   color: #ff8b8b;
-
   font-size: 14px;
 }
 
 .remove-btn:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 100, 100, 0.25);
-
   box-shadow: 0 0 20px rgba(255, 100, 100, 0.1);
 }
+
 /* =========================
    Background particles
 ========================= */
@@ -427,36 +411,56 @@ button {
    MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   body {
     padding: 12px;
   }
 
   .container {
-    padding: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 
-    border-radius: 26px;
+    padding: 24px;
+
+    border-radius: 30px;
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   input,
   select,
   .file-button {
     height: 52px;
+    font-size: 16px;
   }
 
   button {
     height: 54px;
   }
-
-  .actions {
-    flex-direction: column;
-  }
   .static-particle {
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.8),
       0 0 8px rgba(0, 255, 255, 0.7), 0 0 14px rgba(0, 255, 255, 0.5);
+  }
+
+  .texture-block {
+    padding: 20px;
+  }
+  .actions {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  #addTextureBtn,
+  .generate-btn {
+    width: 100%;
+
+    min-height: 62px;
+
+    font-size: 18px;
+
+    border-radius: 18px;
   }
 }
