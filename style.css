@@ -32,10 +32,6 @@ body {
     #070b17;
 }
 
-/* =========================
-   MAIN CONTAINER
-========================= */
-
 .container {
   position: relative;
   z-index: 2;
@@ -85,10 +81,6 @@ body {
   pointer-events: none;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-
 h1 {
   font-size: 30px;
   font-weight: 700;
@@ -123,21 +115,14 @@ h4 {
 .label2 {
   margin-top: 10px;
 }
+
 .label3 {
   margin-bottom: 10px;
 }
 
-/* =========================
-   PACK BLOCK
-========================= */
-
 .pack-box {
   margin-bottom: 14px;
 }
-
-/* =========================
-   GLASS COMPONENTS
-========================= */
 
 input,
 select,
@@ -145,23 +130,17 @@ select,
 button,
 .texture-block {
   position: relative;
-
   overflow: hidden;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.06),
     rgba(255, 255, 255, 0.03)
   );
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
     0 4px 20px rgba(0, 0, 0, 0.18);
-
   transition: 0.28s ease;
 }
 
@@ -171,122 +150,85 @@ select::before,
 button::before,
 .texture-block::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0.1),
     transparent 30%
   );
-
   pointer-events: none;
 }
-
-/* =========================
-   INPUTS
-========================= */
 
 input,
 select {
   width: 100%;
   height: 58px;
-
   padding: 0 18px;
-
   border-radius: 20px;
-
   color: white;
-
   font-size: 15px;
-
   outline: none;
 }
 
 input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 input:focus,
 select:focus {
   border-color: rgba(0, 255, 255, 0.5);
-
   box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.12),
     0 0 24px rgba(0, 255, 255, 0.18), 0 0 50px rgba(0, 140, 255, 0.12);
-
   background: rgba(255, 255, 255, 0.08);
 }
+
 select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   cursor: pointer;
-
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.06),
     rgba(255, 255, 255, 0.03)
   );
-
   color: white;
 }
 
-/* dropdown options */
 select option {
   background: #111827;
-
   color: white;
-
   border: none;
 }
 
-/* selected option */
 select option:checked {
   background: #1e40af;
-
   color: white;
 }
 
-/* =========================
-   TEXTURE BLOCKS
-========================= */
-
 .texture-block {
   padding: 24px;
-
   border-radius: 30px;
-
   margin-bottom: 24px;
-
   display: flex;
   flex-direction: column;
   gap: 16px;
-
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.035),
     rgba(255, 255, 255, 0.015)
   );
-
   border: 1px solid rgba(255, 255, 255, 0.06);
-
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 .texture-block select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-
   background-repeat: no-repeat;
-
   background-position: right 18px center;
-
   padding-right: 50px;
 }
-/* =========================
-   FILE INPUT
-========================= */
 
 .file-wrapper {
   position: relative;
@@ -323,10 +265,6 @@ select option:checked {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
 button {
   border-radius: 22px;
   color: white;
@@ -354,10 +292,6 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   REMOVE BUTTON
-========================= */
-
 .remove-btn {
   height: 42px;
   width: 140px;
@@ -373,43 +307,27 @@ button {
   box-shadow: 0 0 20px rgba(255, 100, 100, 0.1);
 }
 
-/* =========================
-   Background particles
-========================= */
 .particle-layer {
   position: fixed;
-
   inset: 0;
-
   overflow: hidden;
-
   pointer-events: none;
-
   z-index: 1;
 }
 
 .static-particle {
   position: absolute;
-
   font-family: "Enchant", sans-serif;
-
   color: rgba(170, 240, 255, 0.92);
-
   user-select: none;
-
   opacity: 0.9;
-
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.9),
     0 0 10px rgba(0, 255, 255, 0.95), 0 0 18px rgba(0, 255, 255, 0.9),
     0 0 34px rgba(0, 140, 255, 0.7);
 
   transform: translateZ(0);
-
   will-change: transform;
 }
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 1100px) {
   body {
@@ -419,14 +337,21 @@ button {
   .container {
     margin-top: 12px;
     margin-bottom: 12px;
-
     padding: 24px;
-
     border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
   }
 
   h1 {
     font-size: 28px;
+  }
+
+  input,
+  select,
+  .file-button,
+  button,
+  .texture-block {
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   input,
@@ -447,20 +372,17 @@ button {
   .texture-block {
     padding: 20px;
   }
+
   .actions {
     flex-direction: column;
-
     gap: 14px;
   }
 
   #addTextureBtn,
   .generate-btn {
     width: 100%;
-
     min-height: 62px;
-
     font-size: 18px;
-
     border-radius: 18px;
   }
 }
