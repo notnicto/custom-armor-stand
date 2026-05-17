@@ -104,6 +104,13 @@ h4 {
   margin-bottom: 8px;
 }
 
+.texture-block h4 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+}
+
 .label,
 .label2,
 .label3 {
@@ -293,18 +300,27 @@ button {
 }
 
 .remove-btn {
-  height: 42px;
-  width: 140px;
   align-self: flex-end;
-  border-radius: 14px;
+  height: 34px;
+  padding: 0 18px;
+  border-radius: 12px;
   color: #ff8b8b;
   font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .remove-btn:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 100, 100, 0.25);
   box-shadow: 0 0 20px rgba(255, 100, 100, 0.1);
+}
+
+.texture-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
 .particle-layer {

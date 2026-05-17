@@ -99,7 +99,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
-    removeBtn.textContent = "Remove skin";
+    removeBtn.textContent = "Remove";
     removeBtn.className = "remove-btn";
 
     const blocks = container.querySelectorAll(".texture-block");
@@ -107,9 +107,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const title = document.createElement("h4");
     title.textContent = `Skin ${index}`;
-    block.appendChild(title);
+    const headerRow = document.createElement("div");
 
-    block.appendChild(removeBtn);
+    headerRow.className = "texture-header";
+
+    headerRow.appendChild(title);
+
+    headerRow.appendChild(removeBtn);
+
+    block.appendChild(headerRow);
     removeBtn.style.display = index === 1 ? "none" : "block";
 
     const modeLabel = document.createElement("div");
