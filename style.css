@@ -386,7 +386,7 @@ button {
 
 /* MOBILE */
 
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   body {
     padding: 18px 12px;
   }
