@@ -417,11 +417,23 @@ button {
     font-size: 15px;
   }
 
-  .actions {
-    flex-direction: column;
-  }
-
   .remove-btn {
     height: 34px;
+  }
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  #addTextureBtn,
+  .generate-btn {
+    width: 100%;
+    min-height: 54px;
+
+    border-radius: 14px;
+    font-weight: 700;
+
+    padding: 0 14px;
   }
 }
