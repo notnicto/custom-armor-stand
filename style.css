@@ -11,112 +11,121 @@
 
 body {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 32px;
+  padding: 40px 18px;
   overflow-x: hidden;
   position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
   font-family: Inter, sans-serif;
   color: white;
+
   background: radial-gradient(
       circle at top,
-      rgba(0, 140, 255, 0.12),
+      rgba(170, 0, 255, 0.14),
       transparent 35%
     ),
     radial-gradient(
       circle at bottom right,
-      rgba(140, 0, 255, 0.1),
+      rgba(120, 0, 255, 0.12),
       transparent 35%
     ),
-    #070b17;
+    linear-gradient(180deg, #05020b 0%, #0b0514 40%, #12081d 100%);
 }
+
+/* MAIN CONTAINER */
 
 .container {
   position: relative;
   z-index: 2;
+
   width: 100%;
-  max-width: 470px;
-  padding: 34px;
-  border-radius: 34px;
-  overflow: hidden;
+  max-width: 560px;
+
   background: linear-gradient(
-    145deg,
-    rgba(15, 20, 40, 0.72),
-    rgba(8, 12, 28, 0.82)
+    180deg,
+    rgba(28, 14, 45, 0.98),
+    rgba(17, 8, 29, 0.98)
   );
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 140, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(180, 120, 255, 0.12);
+
+  border-radius: 32px;
+
+  padding: 30px;
+
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 24px 80px rgba(0, 0, 0, 0.6), 0 0 45px rgba(140, 0, 255, 0.16);
 }
+
+/* subtle end glow */
 
 .container::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.08),
-    transparent 35%
-  );
-  pointer-events: none;
-}
 
-.container::after {
-  content: "";
   position: absolute;
   inset: 0;
+
+  border-radius: inherit;
+
   background: radial-gradient(
-      circle at top left,
-      rgba(0, 255, 255, 0.08),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(140, 0, 255, 0.08),
-      transparent 40%
-    );
+    circle at top,
+    rgba(183, 120, 255, 0.08),
+    transparent 45%
+  );
+
   pointer-events: none;
 }
 
 h1 {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 18px;
   text-align: center;
-  letter-spacing: -0.5px;
-  text-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
+
+  font-size: 36px;
+  font-weight: 800;
+
+  margin-bottom: 24px;
+
+  color: #f7efff;
+
+  letter-spacing: -1px;
+
+  text-shadow: 0 0 10px rgba(180, 120, 255, 0.45),
+    0 0 24px rgba(180, 120, 255, 0.22);
 }
 
 h3 {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.65);
-  font-weight: 500;
-  margin: 20px 0 14px;
   text-align: center;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  margin: 24px 0 18px;
+
+  color: rgba(230, 210, 255, 0.72);
 }
 
 h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #f5ebff;
 }
 
 .texture-block h4 {
   margin: 0;
-  display: flex;
-  align-items: center;
-  min-height: 34px;
 }
+
+/* LABELS */
 
 .label,
 .label2,
 .label3 {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.4;
+  line-height: 1.5;
+
+  color: rgba(225, 205, 255, 0.74);
 }
 
 .label2 {
@@ -127,278 +136,292 @@ h4 {
   margin-bottom: 10px;
 }
 
+/* SPACING */
+
 .pack-box {
   margin-bottom: 14px;
 }
 
-input,
-select,
-.file-button,
-button,
-.texture-block {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.03)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 4px 20px rgba(0, 0, 0, 0.18);
-  transition: 0.28s ease;
-}
-
-input::before,
-select::before,
-.file-button::before,
-button::before,
-.texture-block::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.1),
-    transparent 30%
-  );
-  pointer-events: none;
-}
+/* INPUTS */
 
 input,
 select {
   width: 100%;
   height: 58px;
+
+  border-radius: 18px;
+
+  border: 2px solid rgba(180, 120, 255, 0.12);
+
+  background: linear-gradient(180deg, #241339, #1a102c);
+
   padding: 0 18px;
-  border-radius: 20px;
+
   color: white;
+
   font-size: 15px;
+
   outline: none;
+
+  transition: 0.22s ease;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 input::placeholder {
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(230, 210, 255, 0.74);
 }
 
 input:focus,
 select:focus {
-  border-color: rgba(0, 255, 255, 0.5);
-  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.12),
-    0 0 24px rgba(0, 255, 255, 0.18), 0 0 50px rgba(0, 140, 255, 0.12);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: #b77cff;
+
+  background: linear-gradient(180deg, #2c1746, #211235);
+
+  box-shadow: 0 0 0 4px rgba(183, 124, 255, 0.08),
+    0 0 22px rgba(183, 124, 255, 0.12);
 }
+
+/* SELECT */
 
 select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+
   cursor: pointer;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.03)
-  );
-  color: white;
+
+  padding-right: 52px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: right 18px center;
 }
 
 select option {
-  background: #111827;
+  background: #1a102c;
   color: white;
-  border: none;
 }
 
-select option:checked {
-  background: #1e40af;
-  color: white;
-}
+/* TEXTURE BLOCK */
 
 .texture-block {
+  background: linear-gradient(
+    180deg,
+    rgba(35, 18, 57, 0.95),
+    rgba(23, 12, 38, 0.95)
+  );
+
+  border: 1px solid rgba(180, 120, 255, 0.08);
+
+  border-radius: 26px;
+
   padding: 24px;
-  border-radius: 30px;
-  margin-bottom: 24px;
+
+  margin-bottom: 22px;
+
   display: flex;
   flex-direction: column;
+
   gap: 16px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.035),
-    rgba(255, 255, 255, 0.015)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-.texture-block select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  padding-right: 50px;
-}
 
-.file-wrapper {
-  position: relative;
-  width: 100%;
-  height: 56px;
-}
-
-.file-wrapper input[type="file"] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-.file-wrapper:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 255, 255, 0.18);
-}
-.file-button {
-  width: 100%;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 15px;
-}
-
-.file-button:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 255, 255, 0.18);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-button {
-  border-radius: 22px;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 18px;
-}
-
-#addTextureBtn,
-.generate-btn {
-  flex: auto;
-  height: 62px;
-}
-
-#addTextureBtn:hover,
-.generate-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 255, 255, 0.22);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.remove-btn {
-  align-self: flex-end;
-  height: 34px;
-  padding: 0 18px;
-  border-radius: 12px;
-  color: #ff8b8b;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.remove-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 100, 100, 0.25);
-  box-shadow: 0 0 20px rgba(255, 100, 100, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02),
+    0 0 25px rgba(140, 0, 255, 0.08);
 }
 
 .texture-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+
+  margin-bottom: 4px;
 }
+
+/* FILE BUTTON */
+
+.file-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 58px;
+}
+
+.file-wrapper input[type="file"] {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.file-button {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #b77cff, #7c3cff);
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.22s ease;
+
+  box-shadow: 0 10px 30px rgba(124, 60, 255, 0.28),
+    0 0 20px rgba(183, 124, 255, 0.18);
+}
+
+.file-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 16px 40px rgba(124, 60, 255, 0.36),
+    0 0 26px rgba(183, 124, 255, 0.24);
+}
+
+/* BUTTONS */
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.22s ease;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+
+  margin-top: 18px;
+}
+
+#addTextureBtn,
+.generate-btn {
+  flex: 1;
+
+  height: 58px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #b77cff, #7c3cff);
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 30px rgba(124, 60, 255, 0.28),
+    0 0 20px rgba(183, 124, 255, 0.18);
+}
+
+#addTextureBtn:hover,
+.generate-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 16px 40px rgba(124, 60, 255, 0.36),
+    0 0 26px rgba(183, 124, 255, 0.24);
+}
+
+/* REMOVE BUTTON */
+
+.remove-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffb8ff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.remove-btn:hover {
+  background: rgba(183, 124, 255, 0.16);
+}
+
+/* PARTICLES */
 
 .particle-layer {
   position: fixed;
   inset: 0;
+
   overflow: hidden;
+
   pointer-events: none;
+
   z-index: 1;
 }
 
 .static-particle {
   position: absolute;
+
   font-family: "Enchant", sans-serif;
-  color: rgba(170, 240, 255, 0.92);
+
+  color: rgba(220, 170, 255, 0.92);
+
   user-select: none;
-  opacity: 0.9;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.9),
-    0 0 10px rgba(0, 255, 255, 0.95), 0 0 18px rgba(0, 255, 255, 0.9),
-    0 0 34px rgba(0, 140, 255, 0.7);
+
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(183, 124, 255, 0.95), 0 0 20px rgba(183, 124, 255, 0.8),
+    0 0 34px rgba(124, 60, 255, 0.6);
 
   transform: translateZ(0);
+
   will-change: transform;
 }
 
-@media (max-width: 1100px) {
+/* MOBILE */
+
+@media (max-width: 700px) {
   body {
-    padding: 12px;
+    padding: 18px 12px;
   }
 
   .container {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    padding: 24px;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 22px;
+
+    border-radius: 26px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .texture-block {
+    padding: 18px;
+
+    border-radius: 22px;
   }
 
   input,
   select,
   .file-button,
-  button,
-  .texture-block {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  input,
-  select,
-  .file-button {
-    height: 52px;
-    font-size: 16px;
-  }
-
-  button {
+  #addTextureBtn,
+  .generate-btn {
     height: 54px;
-  }
-  .static-particle {
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.8),
-      0 0 8px rgba(0, 255, 255, 0.7), 0 0 14px rgba(0, 255, 255, 0.5);
-  }
 
-  .texture-block {
-    padding: 20px;
+    font-size: 15px;
   }
 
   .actions {
     flex-direction: column;
-    gap: 14px;
   }
 
-  #addTextureBtn,
-  .generate-btn {
-    width: 100%;
-    min-height: 62px;
-    font-size: 18px;
-    border-radius: 18px;
+  .remove-btn {
+    height: 34px;
   }
 }

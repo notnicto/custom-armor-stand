@@ -54,7 +54,7 @@ function generateAliases(name) {
 
   return [...new Set([name, clean, titleCase, name.toUpperCase()])];
 }
-const MAX_BLOCKS = 50;
+const MAX_BLOCKS = 100;
 const packIconInput = document.getElementById("packIconInput");
 const packIconBtn = document.getElementById("packIconBtn");
 
@@ -554,36 +554,68 @@ async function generate() {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 const glyphs = [
-  "ᔑ",
-  "ʖ",
-  "ᓵ",
-  "↸",
-  "ᒷ",
-  "⎓",
-  "⊣",
-  "⍑",
-  "╎",
-  "⋮",
-  "ꖌ",
-  "ꖎ",
-  "ᒲ",
-  "リ",
-  "𝙹",
-  "!",
-  "¡",
-  "ᑑ",
-  "∷",
-  "ᓭ",
-  "ℸ",
-  "̣",
-  "⚍",
-  "⍊",
-  "∴",
-  "̇",
-  "/",
-  "|",
-  "|",
-  "⨅",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
 ];
 
 function createStaticParticles() {
@@ -607,9 +639,9 @@ function createStaticParticles() {
 
     p.style.top = Math.random() * 100 + "%";
 
-    p.style.opacity = Math.random() * 0.45 + 0.2;
+    p.style.opacity = Math.random() * 0.3 + 0.7;
 
-    p.style.fontSize = Math.random() * 10 + 14 + "px";
+    p.style.fontSize = Math.random() * 14 + 12 + "px";
 
     p.style.transform = `rotate(${Math.random() * 360}deg)`;
 
